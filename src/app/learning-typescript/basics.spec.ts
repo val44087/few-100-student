@@ -270,13 +270,116 @@ describe('variable, datat types, typing', () => {
             6 % 2 //any mod off 2 w/ 0 result is even
             // ++ Increment
             let num = 0;
-            num++; // 1 // do whatever on this line and then increment 
-            ++num; // 2 //increment then do whatever on this line
+            num++ * 2;  // =1 // 1 // do whatever on this line and then increment 
+            ++num; // 1 //increment then do whatever on this line
             num = num + 1;
             num += 1;
+            //also works with strings
 
-            // -- Decrement
+            let inClass = 'luke';
+            inClass += max + kerry;
+            //lukeawesomecool
+
+            it('conditional operators', () => {
+
+                //&& and ||
+
+
+                let condition = true;
+                let anotherCondition = true;
+                if(condition){
+                    //positiv syntax
+                }
+
+                if(condition){
+                    //positive
+                }else{
+                    //neg
+                }
+
+                if(condition){
+
+                }else if(anotherCondition){
+                    //more pos
+                }else{
+                    //tech optional
+                }
+
+                //ternary
+                //short hand conditional
+                const isAwesome = condition ? 'yup' : 'nope'; //true or false
+                const isTurkey = true;
+                //nested ternary
+                let isBacon = condition ? 'yup' : isTurkey ? 'no, its turkey' : 'its cardboard'
+            });
+            it('should behave...', () => {
+                const zooAnimals = ['zebra', 'lions', 'bears'];
+
+                for (let index = 0; index < zooAnimals.length; index++){
+                    zooAnimals[index]
+            }    
+                for(const animal of zooAnimals){
+                    console.log(animal)}
+                
+            });
         });
     });
+    it('fun syntatice sugar part 1', () => {
+       let grandParent:any | undefined = {
+           parent: {
+               child: {
+                   grandChild: 'dave'
+               }
+           }
+       }
+        //short circuting
+       if(grandParent.parent.child.grandChild == 'Jeff')
+        //cannot read child of undefined
+        //this is called a short circuit
+        if(grandParent && grandParent.parent && grandParent.parent.child && 
+            grandParent.parent.child.grandChild == 'Jeff'){
+
+            }
+
+        
+
+        // elvis operator 
+        // optional chaining operator
+
+        if(grandParent?.parent?.child?.grandChild === 'dave')
+        {
+            //let childName = 
+        }
+        
+    });
  });
+
+ describe('functions', () => {
+     let sum = addTwoNumbers(2, 4);
+
+     //hoisted
+     function addTwoNumbers(parameter1: number, parameter2:number)
+     {
+        return parameter1 + parameter2;
+     }
+
+     //=> function without a name
+     const addToSeven = (firstNum: number) => {
+         // if you have more than on executible lineyou need curlies
+         return firstNum + 7;
+     }
+     const logNumber = (someNum: number): void => {
+         console.log(someNum)
+     }
+     //return is explicit
+     const addNumbers = (num1: number,num2: number = 5)=> num1 + num2;
+
+     const pizzaFunction = function(toppings: string[]) {
+         
+     }
+
+     let fifteen = addToSeven(8);//15
+
+ });
+
 
