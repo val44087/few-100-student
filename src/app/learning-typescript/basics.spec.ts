@@ -372,7 +372,10 @@ describe('variable, datat types, typing', () => {
          console.log(someNum)
      }
      //return is explicit
-     const addNumbers = (num1: number,num2: number = 5)=> num1 + num2;
+     const addNumbers = (num1: number,num2: number = 5, num3?:number)=> num1 + num2+ (num3 ? num3 : 0);
+     addNumbers(7) //12
+     addNumbers(7, 2); //9
+     addNumbers(7, 2, 1) //10
 
      const pizzaFunction = function(toppings: string[]) {
          
@@ -393,8 +396,53 @@ describe('variable, datat types, typing', () => {
     //         return  firstNum % 2 === 0;   
     // }
     //another example
-    const isEven1 = (num:number) => !(num %2);  
-
+    const isEven1 = (num:number) => !(num %2); 
  });
+
+ type functionThatTakesNothingandGivesNothing = () => void;
+ it('should be a higher order function', () => {
+     function doSomethingThenSomethingElse(someThingElseToDo: functionThatTakesNothingandGivesNothing){
+        //do something
+        someThingElseToDo()
+
+     }
+        doSomethingThenSomethingElse(() => console.log('hey'))
+
+        function doSomethingWithResult(thingToDo: (taco: string) => void){
+            let pokemonNmae = 'pickachu'
+            thingToDo(pokemonNmae);
+        }
+     
+ });
+  it('uses array functions', () => {
+      const array1 = [1, 4, 9, 16];
+
+//      let fakeMap = (arr: any[], mutater: any) =>{
+//          let copy = [...arr]
+//          for(const index of copy){
+//              index = mutater(index);
+//          }
+//          return copy;
+//      }
+     //pass function a array
+     //create a copy, manipulate each element in the copied array
+     //passed on the function i provided
+    //and return the mutated copy
+     const map1 = array1.map(x => x * 2);//expected output : 2, 8, 18, 32
+
+     const words = ['spray', 'limit', 'elite', 'better'];
+     const result = words.filter(words => words.length > 5);
+     //result = better
+    it('should behave...', () => {
+        let numeros = [1,6,3,8,6,9,9];
+        let arrOfBools: boolean[];
+        // use map to take numeros and initialize and array of booleans  determining
+        //if the numbers are even
+        const isEven = (num: number) => !(num % 2);
+        arrOfBools = numeros.map(isEven);        
+    });
+ });
+
+
 
 
