@@ -381,5 +381,20 @@ describe('variable, datat types, typing', () => {
      let fifteen = addToSeven(8);//15
 
  });
+ it('should behave...', () => {
+     //write a function
+     //that takes a number
+     //returns true or false if the num is even
+    const isEven = (firstNum: number) => {         
+          return  (firstNum % 2 === 0) ? true:false; }        
+    // Another example of a function
+    // function isEven1(firstNum: number):         
+    //     boolean {
+    //         return  firstNum % 2 === 0;   
+    // }
+    //another example
+    const isEven1 = (num:number) => !(num %2);  
+
+ });
 
 
