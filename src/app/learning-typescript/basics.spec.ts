@@ -274,7 +274,7 @@ describe('variable, datat types, typing', () => {
             ++num; // 2 //increment then do whatever on this line
             num = num + 1;
             num += 1;
-            
+
             // -- Decrement
         });
     });
