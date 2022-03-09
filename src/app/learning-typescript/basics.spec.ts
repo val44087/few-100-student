@@ -1,5 +1,8 @@
 import { monitorEventLoopDelay } from "perf_hooks";
 import { stringify } from "querystring";
+import { isEven } from '../utils/is-even';
+import * as OtherUtils from '../utils/other-utils';
+import { getStudentCount } from '../utils/get-student-count';
 
 describe('variable, datat types, typing', () => {
     it('should declare a variable', () => {
@@ -218,25 +221,7 @@ describe('variable, datat types, typing', () => {
         
         
     });
-    it('interface practice', () => {   
-     
-        interface Cat{
-            breed: string;
-            color: string;
-            age: number;
-            friendly: boolean;
-            kittens?: Cat[];
-        };
-        const typeOfCat: Cat = {
-           breed: 'Siamese',
-           color: 'black',
-           age: 9,
-           friendly: true
-        }
-
-        let someCreature: Cat;          
-        
-    });
+    
     it('enums exist', () => {
         enum Direction{
             Up = 0, 
@@ -433,15 +418,16 @@ describe('variable, datat types, typing', () => {
      const words = ['spray', 'limit', 'elite', 'better'];
      const result = words.filter(words => words.length > 5);
      //result = better
-    it('should behave...', () => {
+    it('map practice', () => {
         let numeros = [1,6,3,8,6,9,9];
         let arrOfBools: boolean[];
         // use map to take numeros and initialize and array of booleans  determining
         //if the numbers are even
-        const isEven = (num: number) => !(num % 2);
+      //  const isEven = (num: number) => !(num % 2);
         arrOfBools = numeros.map(isEven);        
     });
  });
+
 
 
 
